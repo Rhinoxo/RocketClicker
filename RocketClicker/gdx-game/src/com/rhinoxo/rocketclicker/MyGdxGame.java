@@ -6,13 +6,15 @@ import com.badlogic.gdx.graphics.g2d.*;
 
 public class MyGdxGame implements ApplicationListener
 {
-	Texture texture;
+	Texture texture1;
+	Texture texture2;
 	SpriteBatch batch;
 
 	@Override
 	public void create()
 	{
-		texture = new Texture(Gdx.files.internal("android.jpg"));
+		texture1 = new Texture (Gdx.files.internal("rocket.jpg"));
+		texture2 = new Texture(Gdx.files.internal("android.jpg"));
 		batch = new SpriteBatch();
 	}
 
@@ -22,8 +24,10 @@ public class MyGdxGame implements ApplicationListener
 	    Gdx.gl.glClearColor(1, 1, 1, 1);
 	    Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
-		batch.draw(texture, Gdx.graphics.getWidth() / 4, 0, 
+		batch.draw(texture1, Gdx.graphics.getWidth() / 4, 0, 
 				   Gdx.graphics.getWidth() / 2, Gdx.graphics.getWidth() / 2);
+		batch.draw(texture2, Gdx.graphics.getWidth() / 4, 0,
+				Gdx.graphics.getWidth() / 2, Gdx.graphics.getWidth() / 2);
 		batch.end();
 	}
 
